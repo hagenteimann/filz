@@ -167,8 +167,22 @@
             pointer-events: none;
         }
         @media (max-width: 767px) {
-            .showcase-bar { bottom: 56px; }
+            .showcase-bar { display: none; }
         }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            background: #090909;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        #mobile-menu.open { display: flex; }
     </style>
 </head>
 
@@ -226,7 +240,7 @@
     </a>
 
     <!-- MOBILE BOTTOM CTA -->
-    <div class="md:hidden fixed left-0 w-full z-50 grid grid-cols-2" style="bottom: 56px;">
+    <div class="md:hidden fixed bottom-0 left-0 w-full z-50 grid grid-cols-2">
         <a href="tel:+4961284567​89"
            class="bg-brand-black text-white py-4 text-center font-sans font-medium
                   tracking-[0.2em] text-xs uppercase border-r border-white/20">
@@ -252,7 +266,7 @@
                  class="h-10 w-auto">
         </a>
 
-        <!-- NAVIGATION -->
+        <!-- NAVIGATION Desktop -->
         <nav class="hidden md:flex items-center gap-10">
             <a href="#leistungen"
                class="text-white mix-blend-difference font-sans text-xs uppercase tracking-[0.22em]
@@ -271,7 +285,44 @@
                 Beratung anfragen
             </a>
         </nav>
+
+        <!-- HAMBURGER Button Mobile -->
+        <button id="hamburger-btn"
+                class="md:hidden flex flex-col justify-center items-center gap-[5px] w-10 h-10
+                       text-white mix-blend-difference"
+                aria-label="Menü öffnen">
+            <span class="block w-6 h-px bg-current transition-all duration-300"></span>
+            <span class="block w-6 h-px bg-current transition-all duration-300"></span>
+            <span class="block w-4 h-px bg-current transition-all duration-300"></span>
+        </button>
     </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu">
+        <button id="mobile-menu-close"
+                class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
+                aria-label="Menü schließen">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.5" stroke-linecap="square">
+                <path d="M18 6L6 18"/><path d="M6 6l12 12"/>
+            </svg>
+        </button>
+        <a href="#leistungen" onclick="closeMobileMenu()"
+           class="font-serif text-4xl text-white font-light tracking-wide hover:text-white/60 transition-colors">
+            Leistungen
+        </a>
+        <a href="#ueber-uns" onclick="closeMobileMenu()"
+           class="font-serif text-4xl text-white font-light tracking-wide hover:text-white/60 transition-colors">
+            Über uns
+        </a>
+        <a href="#kontakt" onclick="closeMobileMenu()"
+           class="font-serif text-4xl text-white font-light tracking-wide hover:text-white/60 transition-colors">
+            Kontakt
+        </a>
+        <div class="absolute bottom-24 font-sans text-[9px] uppercase tracking-[0.3em] text-white/20">
+            Metallbau &amp; Schlosserei seit 1890
+        </div>
+    </div>
 
     <!-- ============================================================
          HERO
@@ -1236,10 +1287,26 @@
                 }
             });
 
-            /* 4 — Impressum Modal Schließen mit ESC */
+            /* 4 — Hamburger Menü */
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+            hamburgerBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+
+            /* 6 — Impressum Modal Schließen mit ESC */
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     document.getElementById('impressum-modal').classList.remove('open');
+                    mobileMenu.classList.remove('open');
+                    document.body.style.overflow = '';
                 }
             });
 
@@ -1250,6 +1317,12 @@
                 }
             });
         });
+
+        /* Mobile Menu schließen */
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.remove('open');
+            document.body.style.overflow = '';
+        }
 
         /* Form-Submit Toast */
         function handleFormSubmit(e) {

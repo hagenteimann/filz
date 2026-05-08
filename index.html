@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schlosserei Reiv | Meisterbetrieb für Metallbau &amp; Schmiede – Chiemgau</title>
-    <meta name="description" content="Schlosserei &amp; Schmiede Reiv im Chiemgau – Präziser Metallbau nach Maß: Treppen, Geländer, Tore, Balkone und Sonderanfertigungen. Meisterbetrieb seit 1998.">
+    <title>Metallbau Filz | Meisterbetrieb seit 1890 – Taunus &amp; Wiesbaden</title>
+    <meta name="description" content="Metallbau &amp; Schlosserei Filz im Taunus – Treppen, Geländer, Fenster, Türen, Tore, Überdachungen und Sonderanfertigungen. Meisterbetrieb seit 135 Jahren.">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,19 +141,71 @@
             transform: scale(1.06);
             filter: grayscale(100%) brightness(0.95);
         }
+
+        /* Impressum Modal */
+        #impressum-modal {
+            display: none;
+        }
+        #impressum-modal.open {
+            display: flex;
+        }
+
+        /* Showcase Banner */
+        .showcase-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: #090909;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            pointer-events: none;
+        }
+        @media (max-width: 767px) {
+            .showcase-bar { bottom: 56px; }
+        }
     </style>
 </head>
 
 <body class="bg-brand-offwhite text-brand-black font-sans antialiased selection:bg-brand-black selection:text-white">
 
     <!-- ============================================================
+         SHOWCASE BANNER – push8
+    ============================================================ -->
+    <div class="showcase-bar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)"
+             stroke-width="2" stroke-linecap="square">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:0.25em;
+                     text-transform:uppercase;color:rgba(255,255,255,0.3);">
+            Showcase-Website · Demonstrationsprojekt von
+        </span>
+        <span style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:0.3em;
+                     text-transform:uppercase;color:rgba(255,255,255,0.65);font-weight:600;">
+            push8
+        </span>
+        <span style="font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:0.2em;
+                     text-transform:uppercase;color:rgba(255,255,255,0.2);">
+            · Alle Daten sind Platzhalter
+        </span>
+    </div>
+
+    <!-- ============================================================
          PHONE CTA – unten rechts, horizontal, Desktop
     ============================================================ -->
-    <a href="tel:+4981239876543"
+    <a href="tel:+49612845678​9"
        class="fixed bottom-8 right-8 z-50 hidden md:flex items-center gap-3
               bg-brand-black text-white border border-white/10 px-5 py-3.5
               shadow-2xl hover:bg-white hover:text-brand-black hover:border-white/0
-              transition-all duration-300 group">
+              transition-all duration-300 group"
+       style="bottom: 72px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="1.5" stroke-linecap="square" class="flex-shrink-0">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07
@@ -168,14 +220,14 @@
                 Jetzt anrufen
             </div>
             <div class="font-sans text-sm font-medium tracking-wide leading-none">
-                08123 98 765 4
+                06128 – 45 678 9
             </div>
         </div>
     </a>
 
     <!-- MOBILE BOTTOM CTA -->
-    <div class="md:hidden fixed bottom-0 left-0 w-full z-50 grid grid-cols-2">
-        <a href="tel:+4981239876543"
+    <div class="md:hidden fixed left-0 w-full z-50 grid grid-cols-2" style="bottom: 56px;">
+        <a href="tel:+4961284567​89"
            class="bg-brand-black text-white py-4 text-center font-sans font-medium
                   tracking-[0.2em] text-xs uppercase border-r border-white/20">
             Anrufen
@@ -194,20 +246,10 @@
             class="fixed top-0 left-0 w-full z-40 flex justify-between items-center
                    py-6 px-6 lg:px-12 border-b border-transparent">
 
-        <!-- LOGO: Original "Spitze" -->
-        <a href="#" class="flex items-center gap-4 text-white mix-blend-difference">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="1" stroke-linecap="square" stroke-linejoin="miter">
-                <path d="M4 22L12 2L20 22"/>
-                <path d="M8 14H16"/>
-                <path d="M12 2V22"/>
-            </svg>
-            <div>
-                <div class="font-serif text-[22px] tracking-[0.3em] font-semibold leading-none">REIV.</div>
-                <div class="font-sans text-[8px] uppercase tracking-[0.55em] font-light mt-1 opacity-70">
-                    Schmiede &amp; Schlosserei
-                </div>
-            </div>
+        <!-- LOGO -->
+        <a href="#" class="flex items-center">
+            <img src="images/Logo/Filz logo.svg" alt="Metallbau Filz"
+                 class="h-10 w-auto">
         </a>
 
         <!-- NAVIGATION -->
@@ -255,14 +297,14 @@
             <h1 class="reveal font-serif text-5xl md:text-7xl lg:text-[90px] text-white font-light
                         leading-[0.92] tracking-tight mb-8"
                 style="transition-delay: 80ms">
-                Die Ästhetik<br>
-                <em class="italic">des Stahls.</em>
+                Stahl mit<br>
+                <em class="italic">Geschichte.</em>
             </h1>
             <p class="reveal font-sans text-base md:text-lg font-light text-white/65
                        max-w-md leading-relaxed mb-10"
                style="transition-delay: 180ms">
-                Meisterhaftes Handwerk aus dem Chiemgau.<br>
-                Kompromisslose Präzision. Seit 1998.
+                Meisterbetrieb im Herzen des Taunus.<br>
+                135 Jahre Präzision. Seit 1890.
             </p>
             <div class="reveal flex flex-wrap gap-4" style="transition-delay: 280ms">
                 <a href="#kontakt"
@@ -306,9 +348,9 @@
                     <polyline points="17,9 17,17 22,21"/>
                 </svg>
                 <div>
-                    <div class="font-serif text-[26px] font-light text-white leading-none">Seit 1998</div>
+                    <div class="font-serif text-[26px] font-light text-white leading-none">Seit 1890</div>
                     <div class="font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 mt-1">
-                        Gegründet &amp; verwurzelt
+                        135 Jahre Erfahrung
                     </div>
                 </div>
             </div>
@@ -338,9 +380,9 @@
                     <circle cx="17" cy="13" r="3.5" stroke-width="1.2"/>
                 </svg>
                 <div>
-                    <div class="font-serif text-[26px] font-light text-white leading-none">Chiemgau</div>
+                    <div class="font-serif text-[26px] font-light text-white leading-none">Taunus</div>
                     <div class="font-sans text-[9px] uppercase tracking-[0.25em] text-white/40 mt-1">
-                        Chiemgau &amp; Region
+                        Taunus &amp; Wiesbaden
                     </div>
                 </div>
             </div>
@@ -386,8 +428,8 @@
                 </div>
                 <p class="reveal font-sans font-light text-brand-mid text-sm
                            max-w-xs leading-relaxed" style="transition-delay:150ms">
-                    Jedes Objekt entsteht in unserer Werkstatt im Chiemgau –
-                    von Hand gefertigt, auf Maß konstruiert, mit einem Ziel: Dauerhaftigkeit.
+                    Jedes Objekt entsteht in unserer Werkstatt im Taunus –
+                    von Hand gefertigt, auf Maß konstruiert, für die Ewigkeit gedacht.
                 </p>
             </div>
 
@@ -421,27 +463,24 @@
                     </div>
                 </div>
 
-                <!-- 2 · Balkone & Vordächer -->
+                <!-- 2 · Fenster & Türen -->
                 <div class="beton-box reveal p-10 lg:p-12 group" style="transition-delay:60ms">
                     <div class="mb-8">
                         <svg width="46" height="46" viewBox="0 0 46 46" fill="none"
                              stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linecap="square">
-                            <rect x="8" y="22" width="30" height="18"/>
-                            <line x1="3" y1="22" x2="43" y2="22"/>
-                            <line x1="16" y1="26" x2="16" y2="40"/>
-                            <line x1="23" y1="26" x2="23" y2="40"/>
-                            <line x1="30" y1="26" x2="30" y2="40"/>
-                            <line x1="8" y1="32" x2="38" y2="32"/>
-                            <path d="M16 22 L23 12 L30 22"/>
+                            <rect x="6" y="4" width="34" height="38"/>
+                            <line x1="6" y1="23" x2="40" y2="23"/>
+                            <line x1="23" y1="4" x2="23" y2="42"/>
+                            <circle cx="20" cy="23" r="1.5" fill="rgba(255,255,255,0.5)" stroke="none"/>
                         </svg>
                     </div>
                     <h3 class="font-serif text-[22px] text-white/75 font-light mb-3
                                 group-hover:text-white transition-colors duration-300">
-                        Balkone &amp; Vordächer
+                        Fenster &amp; Türen
                     </h3>
                     <p class="font-sans font-light text-white/40 text-sm leading-relaxed">
-                        Maßgefertigte Balkonsysteme und Überdachungen –
-                        funktional, witterungsbeständig und architektonisch stimmig.
+                        Stahl- und Aluminiumfenster sowie Türen nach Maß –
+                        funktional, sicher und dauerhaft für Privat- und Gewerbeimmobilien.
                     </p>
                     <div class="mt-8 flex items-center gap-3 text-white/60
                                  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -450,7 +489,7 @@
                     </div>
                 </div>
 
-                <!-- 3 · Tore & Einfahrten -->
+                <!-- 3 · Tore & Garagentore -->
                 <div class="beton-box reveal p-10 lg:p-12 group" style="transition-delay:120ms">
                     <div class="mb-8">
                         <svg width="46" height="46" viewBox="0 0 46 46" fill="none"
@@ -468,11 +507,11 @@
                     </div>
                     <h3 class="font-serif text-[22px] text-white/75 font-light mb-3
                                 group-hover:text-white transition-colors duration-300">
-                        Tore &amp; Einfahrten
+                        Garagen- &amp; Industrietore
                     </h3>
                     <p class="font-sans font-light text-white/40 text-sm leading-relaxed">
-                        Einfahrtstore, Gartentore und Zäune – massiv, sicher
-                        und individuell gestaltet nach Ihren Vorstellungen.
+                        Garagen-, Einfahrts- und Industrietore – massiv, zuverlässig
+                        und individuell gestaltet für private und gewerbliche Anlagen.
                     </p>
                     <div class="mt-8 flex items-center gap-3 text-white/60
                                  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -481,27 +520,27 @@
                     </div>
                 </div>
 
-                <!-- 4 · Herdbauteile -->
+                <!-- 4 · Überdachungen & Sonnenschutz -->
                 <div class="beton-box reveal p-10 lg:p-12 group" style="transition-delay:180ms">
                     <div class="mb-8">
                         <svg width="46" height="46" viewBox="0 0 46 46" fill="none"
                              stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linecap="square">
-                            <rect x="6" y="22" width="34" height="18"/>
-                            <line x1="6" y1="31" x2="40" y2="31"/>
-                            <line x1="20" y1="22" x2="20" y2="40"/>
-                            <path d="M14 22 Q12 14 18 10 Q18 18 24 14 Q24 22 30 18 Q26 26 20 24"
-                                  fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="12" cy="35" r="2.5" stroke-width="1.4"/>
-                            <circle cx="34" cy="35" r="2.5" stroke-width="1.4"/>
+                            <rect x="8" y="22" width="30" height="18"/>
+                            <line x1="3" y1="22" x2="43" y2="22"/>
+                            <line x1="16" y1="26" x2="16" y2="40"/>
+                            <line x1="23" y1="26" x2="23" y2="40"/>
+                            <line x1="30" y1="26" x2="30" y2="40"/>
+                            <line x1="8" y1="32" x2="38" y2="32"/>
+                            <path d="M16 22 L23 12 L30 22"/>
                         </svg>
                     </div>
                     <h3 class="font-serif text-[22px] text-white/75 font-light mb-3
                                 group-hover:text-white transition-colors duration-300">
-                        Herdbauteile
+                        Überdachungen &amp; Sonnenschutz
                     </h3>
                     <p class="font-sans font-light text-white/40 text-sm leading-relaxed">
-                        Ersatz- und Neubauteile für Holzherde und Kachelöfen –
-                        hitzebeständig, passgenau und nach traditionellen Maßen gefertigt.
+                        Maßgefertigte Vordächer, Terrassenüberdachungen und
+                        Sonnenschutzsysteme – witterungsbeständig und architektonisch stimmig.
                     </p>
                     <div class="mt-8 flex items-center gap-3 text-white/60
                                  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -510,8 +549,40 @@
                     </div>
                 </div>
 
-                <!-- 5 · Sonderanfertigungen -->
+                <!-- 5 · Zäune, Geländer & Stahlbau -->
                 <div class="beton-box reveal p-10 lg:p-12 group" style="transition-delay:240ms">
+                    <div class="mb-8">
+                        <svg width="46" height="46" viewBox="0 0 46 46" fill="none"
+                             stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linecap="square">
+                            <line x1="4" y1="38" x2="42" y2="38"/>
+                            <line x1="10" y1="10" x2="10" y2="38"/>
+                            <line x1="18" y1="10" x2="18" y2="38"/>
+                            <line x1="26" y1="10" x2="26" y2="38"/>
+                            <line x1="34" y1="10" x2="34" y2="38"/>
+                            <line x1="4" y1="18" x2="42" y2="18"/>
+                            <polyline points="6,10 10,6 14,10"/>
+                            <polyline points="14,10 18,6 22,10"/>
+                            <polyline points="22,10 26,6 30,10"/>
+                            <polyline points="30,10 34,6 38,10"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-[22px] text-white/75 font-light mb-3
+                                group-hover:text-white transition-colors duration-300">
+                        Zäune &amp; Stahlbaukonstruktionen
+                    </h3>
+                    <p class="font-sans font-light text-white/40 text-sm leading-relaxed">
+                        Zäune, Einfriedungen und Stahlbaukonstruktionen jeder Größenordnung –
+                        präzise geplant, solide gefertigt und langlebig montiert.
+                    </p>
+                    <div class="mt-8 flex items-center gap-3 text-white/60
+                                 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="w-5 h-px bg-white/60"></div>
+                        <span class="font-sans text-[10px] uppercase tracking-widest">Anfragen</span>
+                    </div>
+                </div>
+
+                <!-- 6 · Brandschutz & Sonderanfertigungen -->
+                <div class="beton-box reveal p-10 lg:p-12 group" style="transition-delay:300ms">
                     <div class="mb-8">
                         <svg width="46" height="46" viewBox="0 0 46 46" fill="none"
                              stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linecap="square">
@@ -526,36 +597,11 @@
                     </div>
                     <h3 class="font-serif text-[22px] text-white/75 font-light mb-3
                                 group-hover:text-white transition-colors duration-300">
-                        Sonderanfertigungen
+                        Brandschutz &amp; Sonderanfertigungen
                     </h3>
                     <p class="font-sans font-light text-white/40 text-sm leading-relaxed">
-                        Ihre Vision, exakt realisiert. Von Kunstschmiedearbeiten
-                        bis zur technischen Sonderkonstruktion – wir fertigen das Außergewöhnliche.
-                    </p>
-                    <div class="mt-8 flex items-center gap-3 text-white/60
-                                 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="w-5 h-px bg-white/60"></div>
-                        <span class="font-sans text-[10px] uppercase tracking-widest">Anfragen</span>
-                    </div>
-                </div>
-
-                <!-- 6 · Reparatur & Wartung -->
-                <div class="beton-box reveal p-10 lg:p-12 group" style="transition-delay:300ms">
-                    <div class="mb-8">
-                        <svg width="46" height="46" viewBox="0 0 46 46" fill="none"
-                             stroke="rgba(255,255,255,0.6)" stroke-width="1.6" stroke-linecap="square">
-                            <path d="M32 8 C38 8 40 14 37 19 L26 30 L32 36 L20 42 L18 38 L24 32 L14 22 C10 16 12 8 18 6 L22 10 L20 16 L26 18 L30 14Z"
-                                  stroke-linejoin="miter"/>
-                            <circle cx="36" cy="12" r="2.5" fill="rgba(255,255,255,0.5)" stroke="none"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-serif text-[22px] text-white/75 font-light mb-3
-                                group-hover:text-white transition-colors duration-300">
-                        Reparatur &amp; Wartung
-                    </h3>
-                    <p class="font-sans font-light text-white/40 text-sm leading-relaxed">
-                        Schlösser, Beschläge, bestehende Metallkonstruktionen –
-                        fachgerechte Reparatur und regelmäßige Wartung für dauerhaften Werterhalt.
+                        Brandschutztüren, Sicherheitselemente und individuelle
+                        Sonderkonstruktionen – normgerecht, passgenau und nach Ihren Vorgaben.
                     </p>
                     <div class="mt-8 flex items-center gap-3 text-white/60
                                  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -641,16 +687,16 @@
                     <picture>
                         <source srcset="images/Dienstleistungen/pexels-furkan-isik-579571801-34227878.webp" type="image/webp">
                         <img src="images/Dienstleistungen/pexels-furkan-isik-579571801-34227878.jpg"
-                             alt="Meister bei der Präzisionsarbeit – Schlosserei Reiv"
+                             alt="Meister bei der Präzisionsarbeit – Metallbau Filz"
                              class="img-zoom w-full h-full object-cover grayscale"
                              loading="lazy" decoding="async">
                     </picture>
                 </div>
-                <!-- Floating Badge – schwarz/weiß -->
+                <!-- Floating Badge -->
                 <div class="absolute -bottom-6 -right-4 lg:-right-8
                              bg-brand-black text-white border border-white/10
                              px-7 py-5 text-center hidden md:block">
-                    <div class="font-serif text-4xl font-semibold leading-none">25+</div>
+                    <div class="font-serif text-4xl font-semibold leading-none">135+</div>
                     <div class="font-sans text-[8px] uppercase tracking-[0.25em] mt-1.5
                                  font-semibold text-white/60">
                         Jahre Erfahrung
@@ -667,26 +713,26 @@
                 </span>
                 <h2 class="reveal font-serif text-3xl md:text-4xl lg:text-5xl font-light
                             leading-[1.1] mb-8" style="transition-delay:100ms">
-                    Handwerkstradition<br>aus dem Chiemgau.<br>
-                    <em class="italic">Formvollendet.</em>
+                    Handwerkstradition<br>aus dem Taunus.<br>
+                    <em class="italic">Seit Generationen.</em>
                 </h2>
                 <div class="reveal space-y-5 font-sans font-light text-brand-mid
                              text-[15px] leading-relaxed" style="transition-delay:150ms">
                     <p>
-                        Seit der Gründung 1998 steht die Schlosserei Reiv für präzises
+                        Seit der Gründung 1890 steht Metallbau Filz für präzises
                         Metallhandwerk auf höchstem Niveau. Was als klassischer Handwerksbetrieb
-                        im Chiemgau begann, hat sich zu einer Adresse für anspruchsvolle
-                        Privat- und Gewerbekunden entwickelt.
+                        im Taunus begann, hat sich zu einer der ersten Adressen für anspruchsvolle
+                        Privat- und Gewerbekunden in der Region Taunusstein/Wiesbaden entwickelt.
                     </p>
                     <p>
-                        Jedes Projekt entsteht in unserer Werkstatt im Chiemgau –
+                        Jedes Projekt entsteht in unserer Werkstatt –
                         von der ersten Skizze bis zur finalen Montage. Wir übernehmen
                         Verantwortung für das gesamte Werk: Planung, Fertigung, Einbau.
                     </p>
                     <p>
                         Was uns antreibt, ist der Anspruch an das Handwerk selbst:
                         sauber geschweißt, präzise bemessen, dauerhaft verarbeitet.
-                        Kein Kompromiss in der Ausführung.
+                        Kein Kompromiss in der Ausführung – das ist unser Versprechen seit 135 Jahren.
                     </p>
                 </div>
                 <div class="reveal mt-10" style="transition-delay:200ms">
@@ -716,12 +762,12 @@
             <blockquote class="reveal font-serif text-3xl md:text-4xl lg:text-5xl font-light
                                 italic leading-[1.25] text-white/90"
                         style="transition-delay:80ms">
-                „Handwerk, das bleibt, braucht keine Erklärung.<br>
-                Es spricht für sich."
+                „Wer 135 Jahre übersteht, hat nicht nur gute Arbeit geleistet –<br>
+                er hat Vertrauen geschmiedet."
             </blockquote>
             <div class="reveal mt-10 font-sans text-[10px] uppercase tracking-[0.35em] text-white/35"
                  style="transition-delay:160ms">
-                Martin Reiv – Meister der Metallbautechnik
+                Thomas Filz – Meister der Metallbautechnik
             </div>
         </div>
     </section>
@@ -757,13 +803,13 @@
                         <svg class="w-3 h-3" fill="#090909" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                     </div>
                     <p class="font-serif text-lg leading-relaxed mb-8 text-brand-black/85">
-                        „Die Präzision und Hingabe, mit der die Schlosserei Reiv unsere
+                        „Die Präzision und Hingabe, mit der Metallbau Filz unsere
                         freitragende Treppe umgesetzt hat, ist beispiellos.
                         Ein echtes architektonisches Statement."
                     </p>
                     <div>
-                        <p class="font-sans font-semibold text-[11px] tracking-wider uppercase">Dr. Matthias von Berg</p>
-                        <p class="font-sans text-[10px] text-brand-mid mt-1 uppercase tracking-widest">Privatier, Traunstein</p>
+                        <p class="font-sans font-semibold text-[11px] tracking-wider uppercase">Dr. Markus Wernau</p>
+                        <p class="font-sans text-[10px] text-brand-mid mt-1 uppercase tracking-widest">Privatier, Taunusstein</p>
                     </div>
                 </div>
 
@@ -778,12 +824,12 @@
                         <svg class="w-3 h-3" fill="#090909" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                     </div>
                     <p class="font-serif text-lg leading-relaxed mb-8 text-brand-black/85">
-                        „Von der ersten Skizze bis zur Montage des Balkons verlief alles
+                        „Von der ersten Skizze bis zur Montage des Garagentors verlief alles
                         absolut reibungslos. Sehr saubere Arbeit, pünktlich und äußerst verlässlich."
                     </p>
                     <div>
-                        <p class="font-sans font-semibold text-[11px] tracking-wider uppercase">Familie Steinmetz</p>
-                        <p class="font-sans text-[10px] text-brand-mid mt-1 uppercase tracking-widest">Bauherren, Chieming</p>
+                        <p class="font-sans font-semibold text-[11px] tracking-wider uppercase">Familie Brenner</p>
+                        <p class="font-sans text-[10px] text-brand-mid mt-1 uppercase tracking-widest">Bauherren, Wiesbaden</p>
                     </div>
                 </div>
 
@@ -798,13 +844,12 @@
                         <svg class="w-3 h-3" fill="#090909" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                     </div>
                     <p class="font-serif text-lg leading-relaxed mb-8 text-brand-black/85">
-                        „Wir haben ein maßgefertigtes Tor für unsere Einfahrt bestellt.
-                        Die massive Qualität und das reduzierte Design übertreffen
-                        unsere Erwartungen bei weitem."
+                        „Wir haben Brandschutztüren und Stahlkonstruktionen für unser
+                        Gewerbegebäude erhalten. Normgerecht, termintreu und in tadelloser Qualität."
                     </p>
                     <div>
-                        <p class="font-sans font-semibold text-[11px] tracking-wider uppercase">Architekturbüro K&amp;P</p>
-                        <p class="font-sans text-[10px] text-brand-mid mt-1 uppercase tracking-widest">Gewerbekunde, Chiemgau</p>
+                        <p class="font-sans font-semibold text-[11px] tracking-wider uppercase">Architekturbüro H&amp;V</p>
+                        <p class="font-sans text-[10px] text-brand-mid mt-1 uppercase tracking-widest">Gewerbekunde, Rheingau</p>
                     </div>
                 </div>
 
@@ -834,26 +879,26 @@
                     <div>
                         <span class="block font-sans text-[9px] uppercase tracking-[0.35em]
                                       text-white/40 mb-2">Telefon</span>
-                        <a href="tel:+4981239876543"
+                        <a href="tel:+4961284567​89"
                            class="font-serif text-2xl hover:text-white/60 transition-colors duration-300">
-                            08123 – 98 765 4
+                            06128 – 45 678 9
                         </a>
                     </div>
                     <div>
                         <span class="block font-sans text-[9px] uppercase tracking-[0.35em]
                                       text-white/40 mb-2">E-Mail</span>
-                        <a href="mailto:info@schlosserei-reiv.de"
+                        <a href="mailto:info@metallbau-filz.de"
                            class="font-serif text-xl hover:text-white/60 transition-colors duration-300">
-                            info@schlosserei-reiv.de
+                            info@metallbau-filz.de
                         </a>
                     </div>
                     <div>
                         <span class="block font-sans text-[9px] uppercase tracking-[0.35em]
                                       text-white/40 mb-2">Werkstatt</span>
                         <address class="font-serif text-xl not-italic text-white/80 leading-relaxed">
-                            Bergstraße 14<br>83278 Traunstein
+                            Ringstraße 7<br>65232 Taunusstein
                             <span class="block font-sans text-sm font-light text-white/35 mt-1">
-                                Chiemgau, Bayern
+                                Taunus, Hessen
                             </span>
                         </address>
                     </div>
@@ -878,12 +923,12 @@
 
                 <div class="flex gap-8 mb-10 pb-10 border-b border-white/10">
                     <div class="text-center">
-                        <div class="font-serif text-3xl text-white font-light">25+</div>
+                        <div class="font-serif text-3xl text-white font-light">135+</div>
                         <div class="font-sans text-[9px] uppercase tracking-[0.15em] text-white/35 mt-1">Jahre Erfahrung</div>
                     </div>
                     <div class="w-px bg-white/10"></div>
                     <div class="text-center">
-                        <div class="font-serif text-3xl text-white font-light">500+</div>
+                        <div class="font-serif text-3xl text-white font-light">800+</div>
                         <div class="font-sans text-[9px] uppercase tracking-[0.15em] text-white/35 mt-1">Projekte realisiert</div>
                     </div>
                     <div class="w-px bg-white/10"></div>
@@ -912,11 +957,11 @@
                         <select class="input-field" style="-webkit-appearance:none; cursor:pointer;">
                             <option value="">Bitte wählen ...</option>
                             <option value="treppen">Treppen &amp; Geländer</option>
-                            <option value="balkone">Balkone &amp; Vordächer</option>
-                            <option value="tore">Tore &amp; Einfahrten</option>
-                            <option value="herdbauteile">Herdbauteile</option>
-                            <option value="sonder">Sonderanfertigung</option>
-                            <option value="reparatur">Reparatur &amp; Wartung</option>
+                            <option value="fenster">Fenster &amp; Türen</option>
+                            <option value="tore">Garagen- &amp; Industrietore</option>
+                            <option value="ueberdachung">Überdachungen &amp; Sonnenschutz</option>
+                            <option value="zaeune">Zäune &amp; Stahlbaukonstruktionen</option>
+                            <option value="brandschutz">Brandschutz &amp; Sonderanfertigung</option>
                         </select>
                     </div>
                     <div>
@@ -954,23 +999,13 @@
                     grid grid-cols-1 md:grid-cols-3 gap-12">
 
             <div>
-                <div class="flex items-center gap-3 text-white mb-6">
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white"
-                         stroke-width="1" stroke-linecap="square" stroke-linejoin="miter">
-                        <path d="M4 22L12 2L20 22"/>
-                        <path d="M8 14H16"/>
-                        <path d="M12 2V22"/>
-                    </svg>
-                    <div>
-                        <div class="font-serif text-lg tracking-[0.3em] font-semibold leading-none">REIV.</div>
-                        <div class="font-sans text-[7px] uppercase tracking-[0.45em] opacity-40 mt-1">
-                            Schmiede &amp; Schlosserei
-                        </div>
-                    </div>
+                <div class="flex items-center mb-6">
+                    <img src="images/Logo/Filz logo.svg" alt="Metallbau Filz"
+                         class="h-8 w-auto opacity-85">
                 </div>
                 <p class="font-sans font-light text-white/35 text-xs leading-relaxed max-w-[220px]">
-                    Meisterbetrieb für Metallbau und Schmiede im Chiemgau.
-                    Gegründet 1998, verwurzelt im Chiemgau.
+                    Meisterbetrieb für Metallbau und Schlosserei im Taunus.
+                    Gegründet 1890, verwurzelt in der Region.
                 </p>
             </div>
 
@@ -980,11 +1015,11 @@
                 </h3>
                 <ul class="space-y-3 font-sans text-xs text-white/35 font-light">
                     <li><a href="#leistungen" class="hover:text-white transition-colors">Treppen &amp; Geländer</a></li>
-                    <li><a href="#leistungen" class="hover:text-white transition-colors">Balkone &amp; Vordächer</a></li>
-                    <li><a href="#leistungen" class="hover:text-white transition-colors">Tore &amp; Einfahrten</a></li>
-                    <li><a href="#leistungen" class="hover:text-white transition-colors">Herdbauteile</a></li>
-                    <li><a href="#leistungen" class="hover:text-white transition-colors">Sonderanfertigungen</a></li>
-                    <li><a href="#leistungen" class="hover:text-white transition-colors">Reparatur &amp; Wartung</a></li>
+                    <li><a href="#leistungen" class="hover:text-white transition-colors">Fenster &amp; Türen</a></li>
+                    <li><a href="#leistungen" class="hover:text-white transition-colors">Garagen- &amp; Industrietore</a></li>
+                    <li><a href="#leistungen" class="hover:text-white transition-colors">Überdachungen &amp; Sonnenschutz</a></li>
+                    <li><a href="#leistungen" class="hover:text-white transition-colors">Zäune &amp; Stahlbaukonstruktionen</a></li>
+                    <li><a href="#leistungen" class="hover:text-white transition-colors">Brandschutz &amp; Sonderanfertigungen</a></li>
                 </ul>
             </div>
 
@@ -994,17 +1029,17 @@
                 </h3>
                 <div class="space-y-4 font-sans font-light text-white/35 text-xs">
                     <div>
-                        <a href="tel:+4981239876543" class="hover:text-white transition-colors text-sm">
-                            08123 – 98 765 4
+                        <a href="tel:+4961284567​89" class="hover:text-white transition-colors text-sm">
+                            06128 – 45 678 9
                         </a>
                     </div>
                     <div>
-                        <a href="mailto:info@schlosserei-reiv.de" class="hover:text-white transition-colors">
-                            info@schlosserei-reiv.de
+                        <a href="mailto:info@metallbau-filz.de" class="hover:text-white transition-colors">
+                            info@metallbau-filz.de
                         </a>
                     </div>
                     <address class="not-italic leading-relaxed">
-                        Bergstraße 14<br>83278 Traunstein<br>Bayern, Deutschland
+                        Ringstraße 7<br>65232 Taunusstein<br>Hessen, Deutschland
                     </address>
                 </div>
             </div>
@@ -1013,14 +1048,139 @@
         <div class="border-t border-white/8 px-6 lg:px-12 py-6
                     flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="font-sans text-[9px] text-white/25 uppercase tracking-widest">
-                &copy; 2026 Martin Reiv Schlosserei. Alle Rechte vorbehalten.
+                &copy; 2026 Metallbau Filz GmbH. Alle Rechte vorbehalten.
             </div>
             <div class="flex gap-8 font-sans text-[9px] text-white/25 uppercase tracking-widest">
-                <a href="#" class="hover:text-white transition-colors">Impressum</a>
+                <button onclick="document.getElementById('impressum-modal').classList.add('open')"
+                        class="hover:text-white transition-colors cursor-pointer bg-transparent border-none p-0">
+                    Impressum
+                </button>
                 <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
             </div>
         </div>
+
+        <!-- push8 Showcase Hinweis im Footer -->
+        <div class="border-t border-white/5 px-6 lg:px-12 py-5 text-center">
+            <p class="font-sans text-[9px] text-white/20 uppercase tracking-[0.3em]">
+                Showcase-Website erstellt von
+                <span class="text-white/40 font-semibold tracking-[0.4em]">push8</span>
+                · Alle Firmen- und Kontaktdaten sind fiktive Platzhalter
+            </p>
+        </div>
     </footer>
+
+    <!-- ============================================================
+         IMPRESSUM MODAL
+    ============================================================ -->
+    <div id="impressum-modal"
+         class="fixed inset-0 z-[200] items-center justify-center bg-black/80 backdrop-blur-sm p-6">
+        <div class="bg-brand-offwhite max-w-2xl w-full max-h-[85vh] overflow-y-auto relative">
+            <button onclick="document.getElementById('impressum-modal').classList.remove('open')"
+                    class="absolute top-6 right-6 font-sans text-[9px] uppercase tracking-widest
+                           text-brand-mid hover:text-brand-black transition-colors cursor-pointer
+                           bg-transparent border-none p-0">
+                Schließen ✕
+            </button>
+
+            <div class="p-10 lg:p-14">
+                <span class="accent-line mb-6"></span>
+                <h2 class="font-serif text-3xl font-light mb-10">Impressum</h2>
+
+                <!-- Showcase-Hinweis -->
+                <div class="bg-brand-black text-white px-6 py-5 mb-10">
+                    <p class="font-sans text-[10px] uppercase tracking-[0.25em] text-white/50 mb-1">Hinweis</p>
+                    <p class="font-sans text-xs text-white/75 leading-relaxed">
+                        Dies ist eine <strong class="text-white">Showcase-Website</strong> von
+                        <strong class="text-white">push8</strong>. Alle nachfolgenden Angaben
+                        sind fiktive Platzhalter und dienen ausschließlich Demonstrationszwecken.
+                    </p>
+                </div>
+
+                <div class="space-y-8 font-sans text-sm text-brand-mid leading-relaxed">
+
+                    <div>
+                        <h3 class="font-sans text-[9px] uppercase tracking-[0.3em] text-brand-black mb-3">
+                            Angaben gemäß § 5 TMG
+                        </h3>
+                        <p>
+                            Metallbau Filz GmbH<br>
+                            Ringstraße 7<br>
+                            65232 Taunusstein<br>
+                            Deutschland
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-sans text-[9px] uppercase tracking-[0.3em] text-brand-black mb-3">
+                            Vertreten durch
+                        </h3>
+                        <p>Thomas Filz (Geschäftsführer)</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-sans text-[9px] uppercase tracking-[0.3em] text-brand-black mb-3">
+                            Kontakt
+                        </h3>
+                        <p>
+                            Telefon: 06128 – 45 678 9<br>
+                            E-Mail: info@metallbau-filz.de
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-sans text-[9px] uppercase tracking-[0.3em] text-brand-black mb-3">
+                            Handelsregister
+                        </h3>
+                        <p>
+                            Registergericht: Amtsgericht Wiesbaden<br>
+                            Registernummer: HRB 12345
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-sans text-[9px] uppercase tracking-[0.3em] text-brand-black mb-3">
+                            Umsatzsteuer-ID
+                        </h3>
+                        <p>
+                            USt-IdNr.: DE 123 456 789<br>
+                            (gemäß § 27a Umsatzsteuergesetz)
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-sans text-[9px] uppercase tracking-[0.3em] text-brand-black mb-3">
+                            Berufsbezeichnung &amp; Kammer
+                        </h3>
+                        <p>
+                            Meisterbetrieb Metallbau<br>
+                            Handwerkskammer Wiesbaden<br>
+                            Bierstadter Straße 45, 65189 Wiesbaden
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-sans text-[9px] uppercase tracking-[0.3em] text-brand-black mb-3">
+                            Verantwortlich für den Inhalt (§ 55 Abs. 2 RStV)
+                        </h3>
+                        <p>
+                            Thomas Filz<br>
+                            Ringstraße 7<br>
+                            65232 Taunusstein
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-brand-gray">
+                        <p class="font-sans text-[10px] text-brand-steel leading-relaxed">
+                            <strong>Haftungshinweis:</strong> Diese Seite ist eine reine Showcase-Website,
+                            erstellt von push8 zu Demonstrationszwecken. Es bestehen keine realen
+                            Geschäftsbeziehungen oder Vertragsangebote. Alle Personen, Adressen
+                            und Kontaktdaten sind fiktiv.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ============================================================
          JAVASCRIPT
@@ -1073,6 +1233,20 @@
                     el.classList.add('in');
                 } else {
                     revealObserver.observe(el);
+                }
+            });
+
+            /* 4 — Impressum Modal Schließen mit ESC */
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.getElementById('impressum-modal').classList.remove('open');
+                }
+            });
+
+            /* 5 — Impressum Modal Schließen bei Klick auf Hintergrund */
+            document.getElementById('impressum-modal').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget) {
+                    e.currentTarget.classList.remove('open');
                 }
             });
         });
